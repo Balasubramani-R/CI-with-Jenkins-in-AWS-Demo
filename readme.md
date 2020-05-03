@@ -1,11 +1,4 @@
 
-#git push origin masterwq
-
-#aaaaaaaawq
-wq
-~wq
-#wq
-!wq
 
 
 
@@ -40,10 +33,16 @@ wq
 
 
 
-!wq
-:wq
-:q!
-:wq
+
+
+
+
+
+
+
+
+trying assignment2
+
 :wq
 ;wq
 
