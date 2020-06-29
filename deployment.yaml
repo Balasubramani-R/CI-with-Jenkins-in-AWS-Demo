@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gcrmyapp5
-        image: eu.gcr.io/DevopsBalu/brsmnb/kube8s:tagversion
+        image: brsmnb/kube8s:tagversion
         ports:
         - containerPort: 8080
 ---
