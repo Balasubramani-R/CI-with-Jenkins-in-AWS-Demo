@@ -41,7 +41,7 @@ pipeline {
                    script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
                     //docker.withRegistry('https://eu.gcr.io') {
-                            myimage.push("${env.BUILD_ID}")		
+                            myapp.push("${env.BUILD_ID}")		
                      }
 			   
                    }
