@@ -2,10 +2,10 @@ pipeline {
     agent any 	
 	environment {
 		
-		PROJECT_ID = 'asif-first-project'
-                CLUSTER_NAME = 'kr-cluster-project'
-                LOCATION = 'europe-north1-a'
-                CREDENTIALS_ID = 'k8asifsvc'
+		PROJECT_ID = 'DevopsBalu'
+                CLUSTER_NAME = 'kubern8'
+                LOCATION = 'us-central1-c'
+                CREDENTIALS_ID = 'kubernetes'
 		
 	}
 	
@@ -31,16 +31,16 @@ pipeline {
 	   stage('Build Docker Image') { 
 		steps {
                    script {
-                    //myimage = docker.build("asifulla4/tomactimage:${env.BUILD_ID}")
-		     myimage = docker.build("eu.gcr.io/asif-first-project/asifulla4/tomactimage:${env.BUILD_ID}")
+                    myapp = docker.build("brsmnb/tomactimage:${env.BUILD_ID}")
+		    //myapp = docker.build("eu.gcr.io/asif-first-project/asifulla4/tomactimage:${env.BUILD_ID}")
                    }
                 }
 	   }
 	   stage("Push Docker Image") {
                 steps {
                    script {
-                    //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-                    docker.withRegistry('https://eu.gcr.io') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+                    //docker.withRegistry('https://eu.gcr.io') {
                             myimage.push("${env.BUILD_ID}")		
                      }
 			   
