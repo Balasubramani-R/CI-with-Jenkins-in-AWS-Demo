@@ -31,8 +31,8 @@ pipeline {
 	   stage('Build Docker Image') { 
 		steps {
                    script {
-                    myapp = docker.build("brsmnb/tomactimage:${env.BUILD_ID}")
-		    //myapp = docker.build("eu.gcr.io/DevopsBalu/Balasubramani-R/tomactimage:${env.BUILD_ID}")
+                    myapp = docker.build("brsmnb/kube8s:${env.BUILD_ID}")
+		    //myapp = docker.build("eu.gcr.io/DevopsBalu/Balasubramani-R/kube8s:${env.BUILD_ID}")
                    }
                 }
 	   }
