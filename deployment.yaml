@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: gcrmyapp5
-        image: eu.gcr.io/asif-first-project/asifulla4/tomactimage:tagversion
+        image: eu.gcr.io/DevopsBalu/Balasubramani-R/tomactimage:tagversion
         ports:
         - containerPort: 8080
 ---
