@@ -32,7 +32,7 @@ pipeline {
 		steps {
                    script {
                     myapp = docker.build("brsmnb/tomactimage:${env.BUILD_ID}")
-		    //myapp = docker.build("eu.gcr.io/asif-first-project/asifulla4/tomactimage:${env.BUILD_ID}")
+		    //myapp = docker.build("eu.gcr.io/DevopsBalu/Balasubramani-R/tomactimage:${env.BUILD_ID}")
                    }
                 }
 	   }
