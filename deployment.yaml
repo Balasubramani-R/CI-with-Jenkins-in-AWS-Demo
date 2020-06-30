@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gcrmyapp5
+  name: webapp1
 spec:
   replicas: 2
   selector:
    matchLabels:
-    app: gcrmyapp5
+    app: webapp1
   template:
     metadata:
       labels:
-        app: gcrmyapp5
+        app: webapp1
     spec:
       containers:
-      - name: gcrmyapp5
+      - name: webapp1
         image: brsmnb/kube8s:tagversion
         ports:
         - containerPort: 8080
@@ -22,13 +22,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gcrmyapp5
+  name: webapp1
   labels:
-    app: gcrmyapp5
+    app: webapp1
 spec:
   type: LoadBalancer
   selector:
-    app: gcrmyapp5
+    app: webapp1
   ports:
   - protocol: TCP
     port: 6655
