@@ -32,7 +32,7 @@ pipeline {
 		steps {
                    script {
                     //myapp = docker.build("brsmnb/kube8s:${env.BUILD_ID}")
-		    myapp = docker.build("eu.gcr.io/devopsbalu/brsmnb/kube8s:${env.BUILD_ID}")
+		    myapp = docker.build("gcr.io/devopsbalu/brsmnb/kube8s:${env.BUILD_ID}")
                    }
                 }
 	   }
@@ -40,7 +40,7 @@ pipeline {
                 steps {
                    script {
                     //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-                    docker.withRegistry('https://eu.gcr.io') {
+                    docker.withRegistry('https://gcr.io') {
                             myapp.push("${env.BUILD_ID}")		
                      }
 			   
