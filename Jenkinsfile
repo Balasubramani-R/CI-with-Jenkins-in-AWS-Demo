@@ -40,7 +40,8 @@ pipeline {
                 steps {
                    script {
                     docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-                    //docker.withRegistry('https://gcr.io') {myapp.push("${env.BUILD_ID}")		
+                    //docker.withRegistry('https://gcr.io') {
+			    myapp1.push("${env.BUILD_ID}")		
                      }
                    }
                 }
