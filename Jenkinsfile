@@ -31,16 +31,16 @@ pipeline {
 	   stage('Build Docker Image') { 
 		steps {
                    script {
-                    //myapp = docker.build("brsmnb/kube8s:${env.BUILD_ID}")
-		    myapp = docker.build("gcr.io/devopsbalu/brsmnb/kube8s:${env.BUILD_ID}")
+                    myapp1 = docker.build("brsmnb/kube9s:${env.BUILD_ID}")
+		    //myapp = docker.build("gcr.io/devopsbalu/brsmnb/kube8s:${env.BUILD_ID}")
                    }
                 }
 	   }
 	   stage("Push Docker Image") {
                 steps {
                    script {
-                    //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
-                    docker.withRegistry('https://gcr.io') {myapp.push("${env.BUILD_ID}")		
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+                    //docker.withRegistry('https://gcr.io') {myapp.push("${env.BUILD_ID}")		
                      }
                    }
                 }
