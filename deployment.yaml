@@ -2,21 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp6
-  labels:
-    app: webapp6
+  name: webapp2
 spec:
   replicas: 2
   selector:
    matchLabels:
-    app: webapp6
+    app: webapp2
   template:
     metadata:
       labels:
-        app: webapp6
+        app: webapp2
     spec:
       containers:
-      - name: webapp6
+      - name: webapp2
         image: brsmnb/kube9s:tagversion
         ports:
         - containerPort: 8080
@@ -24,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp6
+  name: webapp2
 spec:
   type: LoadBalancer
   selector:
-    app: webapp6
+    app: webapp2
   ports:
   - protocol: TCP
     port: 6655
